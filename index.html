@@ -4,88 +4,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
     <title>Virtual keyboard</title>
 </head>
 
 <body>
-    <div class="global-wrapper">
-        <textarea class="keyboard__content"></textarea>
-        <section class="keyboard__wrapper">
-            <button class="keyboard__btn--basic" data-ext="~">`</button>
-            <button class="keyboard__btn--basic" data-ext="!">1</button>
-            <button class="keyboard__btn--basic" data-ext="@">2</button>
-            <button class="keyboard__btn--basic" data-ext="#">3</button>
-            <button class="keyboard__btn--basic" data-ext="$">4</button>
-            <button class="keyboard__btn--basic" data-ext="%">5</button>
-            <button class="keyboard__btn--basic" data-ext=":">6</button>
-            <button class="keyboard__btn--basic" data-ext="?">7</button>
-            <button class="keyboard__btn--basic" data-ext="*">8</button>
-            <button class="keyboard__btn--basic" data-ext="(">9</button>
-            <button class="keyboard__btn--basic" data-ext=")">0</button>
-            <button class="keyboard__btn--basic" data-ext="_">-</button>
-            <button class="keyboard__btn--basic" data-ext="+">=</button>
-            <button class="keyboard__btn--basic keyboard__btn--long keyboard__btn--opt"
-                data-ext="none">Backspace</button>
-
-            <button class="keyboard__btn--basic keyboard__btn--middle keyboard__btn--opt" data-ext="none">Tab</button>
-            <button class="keyboard__btn--basic" data-ext="Q">Й</button>
-            <button class="keyboard__btn--basic" data-ext="W">Ц</button>
-            <button class="keyboard__btn--basic" data-ext="E">У</button>
-            <button class="keyboard__btn--basic" data-ext="R">К</button>
-            <button class="keyboard__btn--basic" data-ext="T">Е</button>
-            <button class="keyboard__btn--basic" data-ext="Y">Н</button>
-            <button class="keyboard__btn--basic" data-ext="U">Г</button>
-            <button class="keyboard__btn--basic" data-ext="I">Ш</button>
-            <button class="keyboard__btn--basic" data-ext="O">Щ</button>
-            <button class="keyboard__btn--basic" data-ext="P">З</button>
-            <button class="keyboard__btn--basic" data-ext="[" data-shift-ext="{">Х</button>
-            <button class="keyboard__btn--basic" data-ext="]" data-shift-ext="}">Ъ</button>
-            <button class="keyboard__btn--basic" data-ext="/">\</button>
-            <button class="keyboard__btn--basic keyboard__btn--opt" data-ext="none">DEL</button>
-
-            <button class="keyboard__btn--basic keyboard__btn--long keyboard__btn--opt" data-ext="none">CAPS
-                LOCK</button>
-            <button class="keyboard__btn--basic" data-ext="A">Ф</button>
-            <button class="keyboard__btn--basic" data-ext="S">Ы</button>
-            <button class="keyboard__btn--basic" data-ext="D">В</button>
-            <button class="keyboard__btn--basic" data-ext="F">А</button>
-            <button class="keyboard__btn--basic" data-ext="G">П</button>
-            <button class="keyboard__btn--basic" data-ext="H">Р</button>
-            <button class="keyboard__btn--basic" data-ext="J">О</button>
-            <button class="keyboard__btn--basic" data-ext="L">Д</button>
-            <button class="keyboard__btn--basic" data-ext=";" data-shift-ext=":">Ж</button>
-            <button class="keyboard__btn--basic" data-ext=" ' " data-shift-ext=" " ">Э</button>
-        <button class=" keyboard__btn--basic keyboard__btn--long keyboard__btn--opt" data-ext="none">ENTER</button>
-
-            <button class="keyboard__btn--basic keyboard__btn--long keyboard__btn--opt" data-ext="none">SHIFT</button>
-            <button class="keyboard__btn--basic" data-ext="none">\</button>
-            <button class="keyboard__btn--basic" data-ext="Z">Я</button>
-            <button class="keyboard__btn--basic" data-ext="X">Ч</button>
-            <button class="keyboard__btn--basic" data-ext="C">С</button>
-            <button class="keyboard__btn--basic" data-ext="V">М</button>
-            <button class="keyboard__btn--basic" data-ext="B">И</button>
-            <button class="keyboard__btn--basic" data-ext="N">Т</button>
-            <button class="keyboard__btn--basic" data-ext="M">Ь</button>
-            <button class="keyboard__btn--basic" data-ext="," data-shift-ext="<">Б</button>
-            <button class="keyboard__btn--basic" data-ext="." data-shift-ext=">">Ю</button>
-            <button class="keyboard__btn--basic" data-ext="none">/</button>
-            <button class="keyboard__btn--basic keyboard__btn--basic--up" data-ext="none"></button>
-            <button class="keyboard__btn--basic keyboard__btn--opt" data-ext="none">SHIFT</button>
-
-            <button class="keyboard__btn--basic keyboard__btn--middle keyboard__btn--opt" data-ext="none">CTRL</button>
-            <button class="keyboard__btn--basic keyboard__btn--opt" data-ext="none">WIN</button>
-            <button class="keyboard__btn--basic keyboard__btn--opt" data-ext="none">ALT</button>
-            <button class="keyboard__btn--basic keyboard__btn--basic--space" data-ext="none"></button>
-            <button class="keyboard__btn--basic keyboard__btn--opt" data-ext="none">ALT</button>
-            <button class="keyboard__btn--basic keyboard__btn--middle keyboard__btn--opt" data-ext="none">CTRL</button>
-            <button class="keyboard__btn--basic keyboard__btn--basic--left keyboard__btn--opt" data-ext="none"></button>
-            <button class="keyboard__btn--basic keyboard__btn--basic--down keyboard__btn--opt" data-ext="none"></button>
-            <button class="keyboard__btn--basic keyboard__btn--basic--right keyboard__btn--opt"
-                data-ext="none"></button>
+    <!-- <div class="wrapper">
+        <textarea type="text" class="keyboard__area"></textarea>
+        <section class="keyboard">
+            <div data-key="Backquote" class="key">
+                ~
+                <br>
+                `
+            </div>
+            <div data-key="Digit1" class="key">
+                !
+                <br>
+                1
+            </div>
+            <div data-key="Digit2" class="key">
+                @
+                <br>
+                2
+            </div>
+            <div data-key="Digit3" class="key">
+                #
+                <br>
+                3
+            </div>
+            <div data-key="Digit4" class="key">
+                $
+                <br>
+                4
+            </div>
+            <div data-key="Digit5" class="key">
+                %
+                <br>
+                5
+            </div>
+            <div data-key="Digit6" class="key">
+                ^
+                <br>
+                6
+            </div>
+            <div data-key="Digit7" class="key">
+                &
+                <br>
+                7
+            </div>
+            <div data-key="Digit8" class="key">
+                *
+                <br>
+                8
+            </div>
+            <div data-key="Digit9" class="key">
+                (
+                <br>
+                9
+            </div>
+            <div data-key="Digit0" class="key">
+                )
+                <br>
+                0
+            </div>
+            <div data-key="Minus" class="key">
+                _
+                <br>
+                -
+            </div>
+            <div data-key="Equal" class="key">
+                +
+                <br>
+                =
+            </div>
+            <div data-key="Backspace" class="key key--backspace">
+                Backspace
+            </div>
+            <div data-key="Tab" class="key key--tab">
+                Tab
+            </div>
+            <div data-key="KeyQ" class="key">
+                Q
+            </div>
+            <div data-key="KeyW" class="key">
+                W
+            </div>
+            <div data-key="KeyE" class="key">
+                E
+            </div>
+            <div data-key="KeyR" class="key">
+                R
+            </div>
+            <div data-key="KeyT" class="key">
+                T
+            </div>
+            <div data-key="KeyY" class="key">
+                Y
+            </div>
+            <div data-key="KeyU" class="key">
+                U
+            </div>
+            <div data-key="KeyI" class="key">
+                I
+            </div>
+            <div data-key="KeyO" class="key">
+                O
+            </div>
+            <div data-key="KeyP" class="key">
+                P
+            </div>
+            <div data-key="BracketLeft" class="key">
+                {
+                <br>
+                [
+            </div>
+            <div data-key="BracketRight" class="key">
+                }
+                <br>
+                ]
+            </div>
+            <div data-key="Backslash" class="key">
+                |
+                <br>
+                \
+            </div>
+            <div data-key="Delete" class="key">
+                Del
+            </div>
+            <div data-key="CapsLock" class="key key--capslock">
+                CapsLock
+            </div>
+            <div data-key="KeyA" class="key">
+                A
+            </div>
+            <div data-key="KeyS" class="key">
+                S
+            </div>
+            <div data-key="KeyD" class="key">
+                D
+            </div>
+            <div data-key="KeyF" class="key">
+                F
+            </div>
+            <div data-key="KeyG" class="key">
+                G
+            </div>
+            <div data-key="KeyH" class="key">
+                H
+            </div>
+            <div data-key="KeyJ" class="key">
+                J
+            </div>
+            <div data-key="KeyK" class="key">
+                K
+            </div>
+            <div data-key="KeyL" class="key">
+                L
+            </div>
+            <div data-key="Semicolon" class="key">
+                :
+                <br>
+                ;
+            </div>
+            <div data-key="Quote" class="key">
+                ""
+                <br>
+                ''
+            </div>
+            <div data-key="Enter" class="key key--enter">
+                Enter
+            </div>
+            <div data-key="ShiftLeft" class="key key--shift">
+                Shift
+            </div>
+            <div data-key="KeyZ" class="key">
+                Z
+            </div>
+            <div data-key="KeyX" class="key">
+                X
+            </div>
+            <div data-key="KeyC" class="key">
+                C
+            </div>
+            <div data-key="KeyV" class="key">
+                V
+            </div>
+            <div data-key="KeyB" class="key">
+                B
+            </div>
+            <div data-key="KeyN" class="key">
+                N
+            </div>
+            <div data-key="KeyM" class="key">
+                M
+            </div>
+            <div data-key="Comma" class="key">
+                < <br>
+                    ,
+            </div>
+            <div data-key="Period" class="key">
+                >
+                <br>
+                .
+            </div>
+            <div data-key="Slash" class="key">
+                ?
+                <br>
+                /
+            </div>
+            <div data-key="ArrowUp" class="key">
+                ▲
+            </div>
+            <div data-key="ShiftRight" class="key key--shift">
+                Shift
+            </div>
+            <div data-key="ControlLeft" class="key">
+                Ctrl
+            </div>
+            <div data-key="MetaLeft" class="key">
+                Win
+            </div>
+            <div data-key="AltLeft" class="key">
+                Alt
+            </div>
+            <div data-key="Space" class="key key--space">
+                Space
+            </div>
+            <div data-key="AltRight" class="key">
+                Alt
+            </div>
+            <div data-key="ArrowLeft" class="key">
+                ◄
+            </div>
+            <div data-key="ArrowDown" class="key">
+                ▼
+            </div>
+            <div data-key="ArrowRight" class="key">
+                ►
+            </div>
+            <div data-key="ControlRight" class="key">
+                Ctrl
+            </div>
         </section>
-    </div>
+    </div> -->
+    <script src="js/index.js"></script>
 </body>
 
 </html>
