@@ -72,7 +72,7 @@
 }
 
 .key--space {
-    width: 46%;
+    width: 47%;
 }
 
 .key--press {
@@ -80,5 +80,9 @@
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #666666;
     background-color: #eeeeee;
+}
+
+.key--capslock-active {
+    background-color: tomato;
 }
 
