@@ -1,3 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Roboto', monospace;
+    font-size: 14px;
+    line-height: 43px;
+    background-color: #181818;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/bg.jpg');
+    opacity: 0.2;
+}
+
 .container {
     width: 100%;
 }
@@ -7,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 900px;
@@ -21,17 +40,61 @@
 }
 
 .keyboard__area {
-    width: 95%;
+    width: 94%;
     height: 150px;
     margin-bottom: 25px;
-    padding: 20px;
+    padding: 25px;
     border: none;
-    box-shadow: 0 0 0 1px #dddddd;
-    background-color: #fafafa;
+    box-shadow: 0 0 0 1px #455d45, inset 0 0 40px 5px #313331;
+    background-image: url('/img/display-texture.png');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
     border-radius: 5px;
-    font-size: 14px;
+    font-family: inherit;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    color: #1dd836;
     resize: none;
     outline: none;
+    animation: display;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes display {
+    0% {
+        color: #1dd836;
+        box-shadow: 0 0 0 1px #455d45, inset 0 0 40px 5px #313331; 
+    }
+
+    50% {
+        color: #22bd37;
+        box-shadow: 0 0 0 1px #455d45, inset 0 0 40px 5px #4a554a;
+    }
+
+    100% {
+        color: #1dd836;
+        box-shadow: 0 0 0 1px #455d45, inset 0 0 40px 5px #313331;
+    }
+}
+.keyboard__area::-webkit-input-placeholder {
+    color: #23b837;
+}
+
+.keyboard__area::selection {
+    background-color: #2b7c36;
+}
+
+.keyboard__area::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+}
+
+.keyboard__area::-webkit-scrollbar-thumb {
+    background-color: #3ca049;
+    border-radius: 50px;
 }
 
 .active {
@@ -43,16 +106,28 @@
 }
 
 .key {
+    position: relative;
     margin: 5px;
-    background-color: #ffffff;
-    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(to bottom, #474747 5%, #2f2f2f 50%);
     border-radius: 5px;
     border: 1px solid transparent;
     width: 45px;
     height: 45px;
     text-align: center;
+    color: #92a595;
     transition: all 0.1s ease;
+    cursor: pointer;
+    box-shadow: inset 0 0 25px 3px #3d3d3d;
 }
+
+.key::selection {
+    background-color: transparent;
+}
+
+#Delete {
+    font-size: 10px;
+}
+
 
 .key--backspace {
     width: 100px;
@@ -76,13 +151,51 @@
 }
 
 .key--press {
-    transform: scale(0.85);
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid #666666;
-    background-color: #eeeeee;
+    transform: scale(0.96);
+    border: 1px solid transparent;
+    background-color: #4d4d4d;
+    color: #3bd14f;
+}
+
+.key--capslock {
+    background: linear-gradient(to bottom, #92402b 5%, #441e15 50%);
+    color: #a53b21;
+    transition: all 0.3s ease;
 }
 
 .key--capslock-active {
-    background-color: tomato;
+    position: relative;
+    background: linear-gradient(to bottom, #1dd836 5%, #195321 50%);
+    color: #1dd836;
 }
 
+.key--capslock-active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 35px 5px #1dd836;
+    opacity: 0.2;
+}
+
+.language {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #60e271;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #2b8a38 5%, #24752f 50%);
+}
+
+.language-info {
+    position: absolute;
+    right: 5px;
+    top: -40px;
+    color: #5dc26b;
+}

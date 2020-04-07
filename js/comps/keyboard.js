@@ -22,7 +22,7 @@ const symbols = {
   Digit2: {
     rus: {
       basic: '2',
-      alt: '"',
+      alt: '&quot',
     },
     eng: {
       basic: '2',
@@ -222,7 +222,7 @@ const symbols = {
   KeyI: {
     rus: {
       basic: 'ш',
-      alt: 'ш',
+      alt: 'Ш',
     },
     eng: {
       basic: 'i',
@@ -406,7 +406,7 @@ const symbols = {
     },
     eng: {
       basic: '\'',
-      alt: '"',
+      alt: '&quot',
     },
   },
   Enter: {
